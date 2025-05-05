@@ -45,7 +45,7 @@ module Vote(input clk,Power,Close,Clear,Ballot,Total,Result,input[3:0]IN, output
                             else begin out<=12'b0;lcl<=1'b0;lvl<=1'b0;end
                     end
                 s1:if(Result) lrl<=1'b1; else begin out<=12'b0;lrl<=1'b0; end
-                s2:if( IN!=4'b0000 && lvl && !Close )begin 
+                s2:if( IN!=4'b0000 && lvl )begin 
                             count<=count+1;
                             reg_b[IN] <=reg_b[IN]+1;                                
                             lvl<=1'b0;
