@@ -3,8 +3,7 @@ module Vote(input clk,Power,Close,Clear,Ballot,Total,Result,input[3:0]IN, output
     parameter s0=3'b000,s1=3'b001,s2=3'b010,s3=3'b011,s4=3'b100,s5=3'b101,s6=3'b110;
     reg[2:0] n,p;
     reg[3:0]i;
-    reg[11:0]count;
-    reg[11:0] reg_b[15:1];
+    reg[11:0] reg_b[15:0];
     reg lvl,lrl,lcl;
     integer m;
     
@@ -31,7 +30,7 @@ module Vote(input clk,Power,Close,Clear,Ballot,Total,Result,input[3:0]IN, output
                      	      else n=s0;end
                     s2:if(lvl)n=s2;else n=s0;
                     s3:if(Close||Ballot) n=s0; else n=s3;
-                    s4:begin if(Clear)n=s5; else if(!Result)n=s6; else n=s4; end
+                    s4:begin if(Clear)n=s5; else if(Result)n=s4;else n=s6;end
                     s5:if(Clear)n=s5; else n=s0;
                     s6:begin if(Clear)n=s5; else if(Result)n=s4; else n=s6;end
                     default: n=s0;
@@ -45,34 +44,34 @@ module Vote(input clk,Power,Close,Clear,Ballot,Total,Result,input[3:0]IN, output
                             else begin out<=12'b0;lcl<=1'b0;lvl<=1'b0;end
                     end
                 s1:if(Result) lrl<=1'b1; else begin out<=12'b0;lrl<=1'b0; end
-                s2:if( IN!=4'b0000 && lvl )begin 
-                            count<=count+1;
+                s2:if( IN!=4'b0000 && lvl)begin 
+                            reg_b[0] <=reg_b[0]+1;
                             reg_b[IN] <=reg_b[IN]+1;                                
                             lvl<=1'b0;
                             out<=12'b0; end
                     else begin out<=12'b0;
                                 reg_b[IN] <=reg_b[IN];
-                                count<=count;
+                                reg_b[0] <=reg_b[0];
                                 lvl<=lvl;
                         end
-                s3:out<=count;
+                s3:out<=reg_b[0];
                 s4:begin 
-                    out <= reg_b[i];
                     if(lrl) begin
 		            if(i<15)
 		            i<=i+1;
-		            else i<=4'b1;
+		            else i<=4'b0001;
 		            end
-                    else i<=i;
+		     else i<=i;
+		    out <= reg_b[i];
                     lrl<=1'b0;           
                     end
                 s5:begin 
-                        for(m=1;m<=15;m=m+1) begin
+                        for(m=0;m<=15;m=m+1) begin
                         	reg_b[m]<=12'b0;
                         	end                     
-                count<=12'b0; out<=12'b0;i<=4'b0001;lvl<=1'b0;lrl<=1'b0;lcl<=1'b0;
+                out<=12'b0;i<=4'b0000;lvl<=1'b0;lrl<=1'b0;lcl<=1'b0;
                    end
-                s6:begin lrl<=1'b1; out<=out;end
+                s6:begin if(Result)lrl<=1'b1; else lrl<=1'b0;out<=out;end
             endcase
       
 endmodule
