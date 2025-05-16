@@ -71,47 +71,34 @@
              
         #230 Total=1'b1;#34 Total=1'b0;
         #100 Close=1'b1;#22 Close=1'b0;
-        #20 Result=1'b1; #15 Result=1'b0;
-        #20 Result=1'b1; #15 Result=1'b0;
+        
+        #20 Result=1'b1; #20 Result=1'b0;
+        #20 Result=1'b1; #20 Result=1'b0;
+        #20 Result=1'b1; #20 Result=1'b0;
+        #20 Result=1'b1; #20 Result=1'b0;
+        #20 Result=1'b1; #20 Result=1'b0;
+        #20 Result=1'b1; #20 Result=1'b0;
         #20 Result=1'b1; #45 Result=1'b0;
+	#20 Result=1'b1; #45 Result=1'b0;
+	#20 Result=1'b1; #45 Result=1'b0;
+	#20 Result=1'b1; #45 Result=1'b0;
+	#20 Result=1'b1; #45 Result=1'b0;
+	#20 Result=1'b1; #45 Result=1'b0;
+	#20 Result=1'b1; #45 Result=1'b0;
+	#20 Result=1'b1; #45 Result=1'b0;
         #20 Result=1'b1; #45 Result=1'b0;
+	#20 Result=1'b1; #45 Result=1'b0;
         #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
-        #20 Result=1'b1; #45 Result=1'b0;
+        
         #30 Clear=1'b1;#20 Clear=1'b0;
 	#100 Ballot=1'b1;#25 Ballot=1'b0; #15 IN=4'b0001;#20 IN=4'b0000;
 	#100 Ballot=1'b1;#25 Ballot=1'b0; #15 IN=4'b0101;#20 IN=4'b0000;
 	#100 Ballot=1'b1;#25 Ballot=1'b0; #15 IN=4'b1111;#20 IN=4'b0000;
 	#100 Ballot=1'b1;#25 Ballot=1'b0; #15 IN=4'b0001;#20 IN=4'b0000;
-	#230 Total=1'b1;#34 Total=1'b0;
+	#23 Total=1'b1;#34 Total=1'b0;
 	#13 Close=1'b1;#32 Close=1'b0;
+	#10 Power=1'b0;#20 Power=1'b1;
+	
 	#20 Result=1'b1; #45 Result=1'b0;
 	#20 Result=1'b1; #45 Result=1'b0;
 	#20 Result=1'b1; #45 Result=1'b0;
@@ -141,9 +128,9 @@
         #20 Result=1'b1; #45 Result=1'b0;
         #20 Result=1'b1; #45 Result=1'b0;
         #100 Clear=1'b1; Clear=1'b0;          
-
-   
         #10 Power=1'b0;
+        #100 Power=1'b1;
+        #10 Ballot=1'b1;#30 Ballot=1'b0;
         #30 $finish;
  end
 initial begin
