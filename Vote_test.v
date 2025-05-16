@@ -98,7 +98,7 @@
 	#23 Total=1'b1;#34 Total=1'b0;
 	#13 Close=1'b1;#32 Close=1'b0;
 	#10 Power=1'b0;#20 Power=1'b1;
-	
+	#11 Close=1'b1;#22 Close=1'b0;
 	#20 Result=1'b1; #45 Result=1'b0;
 	#20 Result=1'b1; #45 Result=1'b0;
 	#20 Result=1'b1; #45 Result=1'b0;
