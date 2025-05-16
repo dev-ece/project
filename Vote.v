@@ -57,12 +57,12 @@ module Vote(input clk,Power,Close,Clear,Ballot,Total,Result,input[3:0]IN, output
                 s3:out<=reg_b[0];
                 s4:begin 
                     if(lrl) begin
-		            if(i<15)
-		            i<=i+1;
-		            else i<=4'b0001;
+		            if(i!=4'b0)
+		            out <= reg_b[i];
+		            else out<=out;
+		            i<=i+1;		            	            
 		            end
-		     else i<=i;
-		    out <= reg_b[i];
+		     else begin i<=i; out<=out; end		    
                     lrl<=1'b0;           
                     end
                 s5:begin 
