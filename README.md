@@ -19,7 +19,7 @@ The design is implemented in **Verilog** , and the primary goal is to demonstrat
 
 
 ## Introduction
-
+![Text Image 1](https://www.google.com/imgres?q=evm%20machine%20logo&imgurl=https%3A%2F%2Fwww.shutterstock.com%2Fimage-illustration%2Felectronic-voting-machine-evm-male-260nw-1948119313.jpg&imgrefurl=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Findian-evm&docid=FalRrfTvpKoVQM&tbnid=t3usU-ieEpHgJM&vet=12ahUKEwiP76yA77GNAxXL1DgGHcL3FZ0QM3oECGYQAA..i&w=260&h=280&hcb=2&ved=2ahUKEwiP76yA77GNAxXL1DgGHcL3FZ0QM3oECGYQAA)
 The **Control Unit** (CU) of the **EVM** is responsible for organising various functional components, ensuring that voting operations are securely carried out. The design involves:
 
 - **Voting data input** {voter selection from Ballot unit(which is considered as a 16:4 encoder), button presses on the CU itself}
@@ -38,11 +38,11 @@ The architecture consists of the following modules:
 - **Clock Control:** Synchronizes the operations of the control unit and the other components.
 - **Input/Output Interface:** Facilitates communication with external buttons and the display.
 
-## Key Features of the Design:
+## Features:
 
 - **Finite State Machine (FSM):** The control unit uses an FSM for managing the sequence of operations during a vote.
-- **Modular Design:** The project is divided into several modules for better scalability and reusability.
-- **Secure Operation:** It ensures tamper-proof functionality, preventing unauthorized votes.
+- **Getting Result:** The project is divided into several modules for better scalability and reusability.
+- **Secure Operation:** As it is made in RTL, each stage is seperated from each others and especially some states like Close, Wait and Result can't come out from their state to perform other task if some specific path is not followed.
 
 ## Getting Started
 
